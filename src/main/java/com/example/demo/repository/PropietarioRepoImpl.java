@@ -3,14 +3,16 @@ package com.example.demo.repository;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
+
 
 import com.example.demo.modelo.Propietario;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
+import jakarta.transaction.Transactional;
 import jakarta.transaction.Transactional.TxType;
+
 
 @Repository
 @Transactional
@@ -45,7 +47,7 @@ public class PropietarioRepoImpl implements IPropietarioRepo {
 
 	@Override
 	//@Transactional(value = TxType.NOT_SUPPORTED)
-	//@Transactional(value = TxType.NOT_SUPPORTED)
+	@Transactional(value = TxType.NOT_SUPPORTED)
 	public List<Propietario> buscarTodos() {
 		// TODO Auto-generated method stub
 
