@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Reporte | Propietarios</title>
+
+
+
+</head>
+
+
+<body>
+	<h6>Hola Mundo</h6>
+	<!--elemento para mostrar tablas-->
+	<table>
+		<thead>
+		    <!--tr elemento fila-->
+		    
+			<tr>
+			<!--th elemento columna-->
+				<th>ID </th>
+				<th>Nombre </th>
+				<th>Apellido </th>
+				<th>Cédula </th>
+			</tr>
+		</thead>
+		<hbody>
+		   <tr th:each="propietario:${propietarios}">
+		   
+		          <!--declaro columnas dentro de un body y uso td -->
+		          <td th:text="${propietario.id}"></td>
+		          <td th:text="${propietario.nombre}"></td>
+		          <td th:text="${propietario.apellido}"></td>
+		          <td th:text="${propietario.cedula}"></td>
+		   
+		   </tr>
+		   
+		</hbody>
+	</table>
+
+
+
+</body>
+
+</html>
